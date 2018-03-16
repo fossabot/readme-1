@@ -73,7 +73,7 @@ Anything
 
 ## :credit_card: License
 
-- [MIT](./LICENSE)`,
+- [MIT](./LICENSE) &copy; micnncim`,
 		repo, user, repo, user, user)
 
 	_, err = os.Create(readme)

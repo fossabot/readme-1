@@ -48,8 +48,7 @@ Anything
 
 ## :credit_card: License
 
-- [MIT](./LICENSE)
-
+- [MIT](./LICENSE) &copy; micnncim
 ```
 
 ## :mag: Usage
@@ -90,4 +89,4 @@ $ go get github.com/micnncim/readme
 
 ## :credit_card: License
 
-- [MIT](./LICENSE)
+- [MIT](./LICENSE) &copy; micnncim
