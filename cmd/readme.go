@@ -11,9 +11,16 @@ import (
 )
 
 func Readme(c *cli.Context) error {
+	readme := "README.md"
+
+	if Exists(readme) {
+		fmt.Println("README.md already exists.")
+		return nil
+	}
+
 	dir, err := os.Getwd()
 	if err != nil {
-
+		return err
 	}
 
 	r := regexp.MustCompile(`.*/src/github.com/.+/.+`)
@@ -69,11 +76,15 @@ Anything
 - [MIT](./LICENSE)`,
 		repo, user, repo, user, user)
 
-	readme := "README.md"
 	_, err = os.Create(readme)
 	if err != nil {
 		return err
 	}
 	ioutil.WriteFile(readme, []byte(text), 0666)
 	return err
+}
+
+func Exists(filename string) bool {
+	_, err := os.Stat(filename)
+	return err == nil
 }
