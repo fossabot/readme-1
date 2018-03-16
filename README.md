@@ -5,7 +5,7 @@ Generate README.md template.
 
 ## :rocket: Features
 
-Generate following `README.md` under `path/to/src/github.com/USER/REPO`. Username and repo will become yours if you're in an appropriate repository. If you want to use `readme` efficiently, [motemen/ghq](https://github.com/motemen/ghq) is highly recommended.
+Generate the following `README.md` under `path/to/src/github.com/USER/REPO`. The username and repository name will become yours if you're in an appropriate repository (above). If you want to use `readme` efficiently, [motemen/ghq](https://github.com/motemen/ghq) is highly recommended.
 
 ```
 # readme
