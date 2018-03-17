@@ -17,7 +17,11 @@ Overview
 
 Description
 
-***DEMO:***
+***DEMO***
+
+## :package: Installation
+
+$ git clone https://github.com/micnncim/readme
 
 ## :rocket: Features
 
@@ -34,18 +38,12 @@ Description
 1. Usage
 1. ...
 
-## :package: Installation
-
-$ git clone https://github.com/micnncim/readme
+## :bulb: Example
 
 ## :white_check_mark: TODO
 
 - [ ] todo
 - [ ] ...
-
-## :bulb: Anything Else
-
-Anything
 
 ## :bust_in_silhouette: Author
 
