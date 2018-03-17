@@ -83,7 +83,7 @@ for Gopher
 $ go get github.com/micnncim/readme
 ```
 
-## TODO
+## :white_check_mark: TODO
 
 - [ ] Add init/config command: config user's own `README.md` template
 
