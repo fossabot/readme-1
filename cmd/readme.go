@@ -2,14 +2,19 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/exec"
 	"regexp"
 	"strings"
+	"text/template"
 
 	"github.com/urfave/cli"
 )
+
+type Project struct {
+	User string
+	Repo string
+}
 
 func Readme(c *cli.Context) error {
 	readme := "README.md"
@@ -35,10 +40,11 @@ func Readme(c *cli.Context) error {
 	}
 	el := strings.Split(dir, "/")
 	size := len(el)
-	user := el[size-2]
-	repo := el[size-1]
+	project := Project{}
+	project.User = el[size-2]
+	project.Repo = el[size-1]
 
-	text := fmt.Sprintf(`# %s
+	text := `# {{.Repo}}
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 Overview
@@ -51,7 +57,7 @@ Description
 
 ## :package: Installation
 
-$ git clone https://github.com/%s/%s
+$ git clone https://github.com/{{.User}}/{{.Repo}}
 
 ## :rocket: Features
 
@@ -79,18 +85,20 @@ Example
 
 ## :bust_in_silhouette: Author
 
-[@%s](https://twitter.com/%s)
+[@{{.User}}](https://twitter.com/{{.User}})
 
 ## :credit_card: License
 
-- [MIT](./LICENSE) &copy; micnncim`,
-		repo, user, repo, user, user)
+- [MIT](./LICENSE) &copy; {{.User}}`
 
-	_, err = os.Create(readme)
+	file, err := os.Create(readme)
 	if err != nil {
 		return err
 	}
-	ioutil.WriteFile(readme, []byte(text), 0666)
+	t := template.New("t")
+	template.Must(t.Parse(text))
+	t.Execute(file, project)
+
 	err = Edit(readme)
 	return err
 }
