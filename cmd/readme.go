@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/exec"
 	"regexp"
 	"strings"
 
@@ -14,7 +15,11 @@ func Readme(c *cli.Context) error {
 	readme := "README.md"
 
 	if Exists(readme) {
-		fmt.Println("README.md already exists.")
+		err := Edit(readme)
+		if err != nil {
+			fmt.Println("Cannot open editor.")
+			return err
+		}
 		return nil
 	}
 
@@ -81,10 +86,24 @@ Anything
 		return err
 	}
 	ioutil.WriteFile(readme, []byte(text), 0666)
+	err = Edit(readme)
 	return err
 }
 
 func Exists(filename string) bool {
 	_, err := os.Stat(filename)
 	return err == nil
+}
+
+func Edit(filename string) error {
+	editor := os.Getenv("EDITOR")
+	cmd := exec.Command(editor, filename)
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	err := cmd.Run()
+	if err != nil {
+		fmt.Println("Cannot open editor.")
+		return err
+	}
+	return err
 }
