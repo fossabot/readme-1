@@ -95,8 +95,10 @@ Example
 	if err != nil {
 		return err
 	}
-	t := template.New("t")
-	template.Must(t.Parse(text))
+	t, err := template.New("t").Parse(text)
+	if err != nil {
+		return err
+	}
 	t.Execute(file, project)
 
 	err = Edit(readme)
