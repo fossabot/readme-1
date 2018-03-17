@@ -83,6 +83,10 @@ for Gopher
 $ go get github.com/micnncim/readme
 ```
 
+## TODO
+
+- [ ] Add init/config command: config user's own `README.md` template
+
 ## :bust_in_silhouette: Author
 
 [@micnncim](https://twitter.com/micnncim)
