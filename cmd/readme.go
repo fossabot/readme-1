@@ -70,6 +70,8 @@ $ git clone https://github.com/%s/%s
 
 ## :bulb: Example
 
+Example
+
 ## :white_check_mark: TODO
 
 - [ ] todo
