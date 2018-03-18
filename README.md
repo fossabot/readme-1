@@ -58,22 +58,13 @@ Example
 
 ## :mag: Usage
 
+The usage of `readme` is pretty simple. Just execute `readme` anytime.
+
 ```
-NAME:
-   readme - Generate README.md
-
-USAGE:
-   main [global options] command [command options] [arguments...]
-
-VERSION:
-   0.0.0
-
-COMMANDS:
-     help, h  Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --help, -h     show help
-   --version, -v  print the version
+$ # Create README.md if it doesn't exist
+$ readme
+$ # Edit README.md if it exists
+$ readme
 ```
 
 ## :package: Installation
