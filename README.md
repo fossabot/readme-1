@@ -1,5 +1,6 @@
 # readme
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmicnncim%2Freadme.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmicnncim%2Freadme?ref=badge_shield)
 
 Generate README.md template.
 
@@ -55,6 +56,9 @@ Example
 
 - [MIT](./LICENSE) &copy; micnncim
 ```
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmicnncim%2Freadme.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmicnncim%2Freadme?ref=badge_large)
 
 ## :mag: Usage
 
